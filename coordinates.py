@@ -1,0 +1,166 @@
+"""
+coordinates.py
+Lat/Lon reference points for map rendering (parks, dams, cities, lakes).
+Approximate coordinates for visualization purposes - verify before GIS use.
+"""
+
+PARK_COORDINATES = {
+    "Ayub National Park": (33.7180, 73.2570),
+    "Jallo Park Lahore": (31.5760, 74.4880),
+    "Lulusar-Dudipatsar National Park": (35.0000, 73.8500),
+    "Lal Suhanra National Park": (29.3800, 71.8300),
+    "Kirthar National Park": (25.8000, 67.3000),
+    "Khunjerab National Park": (36.8500, 75.4200),
+    "City Park Multan": (30.1798, 71.4500),
+    "Kashmir Park": (33.6260, 73.0710),
+    "DHA Park Multan": (30.2100, 71.4900),
+    "Chitral Gol National Park": (35.8600, 71.7500),
+    "Chaman Zar-e-Askari Park Multan": (30.1980, 71.4650),
+    "Jinnah Park": (33.7080, 73.0550),
+    "Hingol National Park": (25.6000, 65.5000),
+    "Shakarparian National Park": (33.6950, 73.0850),
+    "Faisal Park Mumtazabad": (30.2200, 71.5100),
+    "Pir Lasura National Park": (33.1500, 73.7500),
+    "Hazarganji-Chiltan National Park": (30.1000, 66.7500),
+    "Pakistan Park": (33.6600, 73.0900),
+    "Machiara National Park": (34.5000, 73.7500),
+    "Rajana Forest Bhagat Wildlife Park": (31.2000, 72.0000),
+    "Margalla Hills National Park": (33.7500, 73.0800),
+}
+
+DAM_COORDINATES = {
+    "Tarbela Dam": (34.0916, 72.6969),
+    "Mangla Dam": (33.1470, 73.6420),
+    "Diamer-Bhasha Dam": (35.5230, 73.9950),
+    "Kalabagh Dam (proposed, unbuilt)": (32.9600, 71.5500),
+    "Warsak Dam": (34.1930, 71.3450),
+    "Gomal Zam Dam": (32.0000, 69.9500),
+    "Mirani Dam": (25.9500, 65.6500),
+}
+
+BARRAGE_COORDINATES = {
+    "Marala Headworks": (32.6770, 74.4640),
+    "Rasool Barrage": (32.6900, 73.5300),
+    "Qadirabad Barrage": (32.3670, 73.6830),
+    "Balloki Barrage": (31.2000, 73.8330),
+    "Sulemanki Headworks": (30.4670, 73.8830),
+    "Sidhnai Barrage": (30.6500, 72.1330),
+    "Melsi Headworks": (29.8000, 72.1000),
+    "Trimmu Barrage": (30.9670, 72.1500),
+    "Panjnad Barrage": (29.3670, 71.0330),
+    "Taunsa Barrage": (30.7060, 70.9500),
+    "Chashma Barrage": (32.4330, 71.3670),
+    "Jinnah Barrage": (32.9330, 71.5670),
+    "Guddu Barrage": (28.4000, 69.7000),
+    "Sukkur Barrage": (27.6980, 68.8480),
+    "Kotri (Ghulam Muhammad) Barrage": (25.4680, 68.3080),
+}
+
+# ---------------------------------------------------------------------------
+# WAPDA Telemetry / flood-forecasting network stations (approximate)
+# ---------------------------------------------------------------------------
+TELEMETRY_STATION_COORDINATES = {
+    "Badoki (Master Station)": (31.7300, 74.1700),
+    "Saidu Sharif": (34.7460, 72.3600),
+    "Chakdara": (34.6330, 72.0330),
+    "Daggar": (34.5170, 72.4500),
+    "Phulra": (34.7500, 73.1000),
+    "Oghi": (34.6330, 73.0330),
+    "Mansehra": (34.3330, 73.2000),
+    "Besham": (34.9170, 72.8830),
+    "Jaglot": (35.7330, 74.5330),
+    "Shinkiari": (34.4670, 73.2670),
+    "Khairabad": (33.9670, 72.3000),
+    "Nowshera": (34.0150, 71.9740),
+    "Attock": (33.7670, 72.3600),
+    "Kallar": (33.6330, 73.4500),
+    "Ghazi Habibullah (G.Habibullah)": (34.3670, 73.4670),
+    "Muzaffarabad": (34.3700, 73.4710),
+    "Domel": (34.3800, 73.4600),
+    "Kotli": (33.5170, 73.9000),
+    "Kohala": (34.3670, 73.4670),
+    "Plandri": (33.7330, 73.7000),
+    "Azad Pattan (Azadpatan)": (33.8830, 73.5500),
+    "Palandari": (33.7330, 73.7000),
+    "Punchh": (33.7700, 74.1000),
+    "Sehrkakota": (33.8000, 73.9000),
+    "Sohawa": (32.9330, 73.6670),
+    "Mangla": (33.1470, 73.6420),
+    "Mirpur": (33.1470, 73.7500),
+    "Daulat Nagar": (32.7500, 74.0500),
+    "Gujrat": (32.5740, 74.0780),
+    "Kund": (33.0330, 73.7000),
+    "Marala": (32.6770, 74.4640),
+    "Sialkot": (32.4945, 74.5229),
+    "Palkhu": (32.4000, 74.7000),
+    "Ura": (32.5000, 74.6500),
+    "Zafarwal": (32.3330, 74.8330),
+    "Shakargarh": (32.2740, 75.1620),
+    "Jassar": (32.2830, 74.8500),
+    "Kasur": (31.1170, 74.4500),
+    "Gandasingwala": (31.0500, 74.5000),
+    "Pindi Ghaib": (33.2400, 72.3200),
+    "Dhok Pathan": (33.2300, 72.4000),
+    "Islamabad": (33.6844, 73.0479),
+    "Lahore": (31.5497, 74.3436),
+    "Kot Naina": (32.2000, 75.0000),
+    "Shahdara": (31.6200, 74.3100),
+    "G.S. Wala": (30.5500, 73.6000),
+    "Bakarke": (30.6000, 73.7500),
+    "Sulemanki": (30.4670, 73.8830),
+    "Islam Headworks": (30.1500, 72.5670),
+    "Khanki": (32.6300, 74.1500),
+    "Chiniot Bridge": (31.7200, 72.9800),
+    "Rawaz Bridge": (30.9700, 72.2000),
+    "New Rasul": (32.6900, 73.5300),
+    "Khushab Bridge": (32.2960, 72.3510),
+    "Kalabagh": (32.9600, 71.5500),
+    "Mithankot": (28.9200, 70.4300),
+    "Ghazighat": (30.6500, 70.9300),
+    "Chachran Sharif": (28.8400, 70.2800),
+}
+
+LAKE_COORDINATES = {
+    "Manchar Lake": (26.4000, 67.6500),
+    "Keenjhar Lake": (24.9500, 68.1000),
+    "Hamal Lake": (26.6000, 68.0000),
+    "Saif-ul-Malook Lake": (34.8830, 73.6970),
+    "Attabad Lake": (36.3410, 74.8710),
+    "Satpara Lake": (35.2440, 75.6580),
+    "Shangrila (Lower Kachura) Lake": (35.4300, 75.5000),
+    "Borith Lake": (36.5500, 74.8800),
+    "Rawal Lake": (33.6980, 73.1280),
+    "Kallar Kahar Lake": (32.7700, 72.6900),
+    "Hanna Lake": (30.3200, 67.0700),
+}
+
+CITY_COORDINATES = {
+    "Islamabad": (33.6844, 73.0479), "Lahore": (31.5497, 74.3436), "Karachi": (24.8607, 67.0011),
+    "Peshawar": (34.0151, 71.5249), "Quetta": (30.1798, 66.9750), "Gilgit": (35.9200, 74.3080),
+    "Muzaffarabad": (34.3700, 73.4710), "Skardu": (35.2971, 75.6333), "Multan": (30.1575, 71.5249),
+    "Sukkur": (27.7052, 68.8574), "Hyderabad": (25.3960, 68.3578), "Gwadar": (25.1216, 62.3254),
+    "Thatta": (24.7461, 67.9243), "Ziarat": (30.3810, 67.7250),
+}
+
+INDUS_DELTA_TOWN_COORDINATES = {
+    "Banoo": (24.9500, 68.1300),
+    "Thatta": (24.7461, 67.9243),
+    "Sujawal": (24.6000, 68.0667),
+    "Gharo": (24.7500, 67.5833),
+    "Mirpur Sakro": (24.5500, 67.6167),
+    "Jati": (24.3550, 68.2650),
+    "Keti Bandar": (24.1400, 67.4500),
+    "Shah Bandar": (24.1300, 67.9000),
+}
+
+MOUNTAIN_PEAK_COORDINATES = {
+    "K2 (Karakoram)": (35.8825, 76.5133),
+    "Nanga Parbat (Himalaya)": (35.2374, 74.5892),
+    "Tirich Mir (Hindu Kush)": (36.2500, 71.8400),
+    "Buni Zom (Hindu Raj)": (36.1300, 72.5700),
+    "Sikaram (Spin Ghar)": (33.8830, 69.9670),
+    "Takht-e-Sulaiman (Sulaiman Range)": (31.8830, 70.0500),
+    "Kutte ji Qabar (Kirthar)": (26.6300, 67.3500),
+    "Khalifat (Toba Kakar)": (30.6500, 67.8300),
+    "Sakesar (Salt Range)": (32.4770, 71.9330),
+}
